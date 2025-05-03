@@ -75,23 +75,25 @@ const Jspractice = () => {
   //       console.log("Fetch error:", err);
   //     });
   // }, []);
+  // useEffect(() => {
+
+
   useEffect(() => {
-
-    const asyncfun = async () => {
+    const asyncoperation = async () => {
       try {
-        let res = await fetch('https://jsonplaceholder.typicode.com/users')
-        let response = await res.json();
-        setData(response);
-        console.log("async operation done successfully");
-      }
-      catch (err) {
-        console.log("something went wrong", err);
-      }
+        const response = await fetch('https://jsonplaceholder.typicode.com/users')
+        const data = await response.json();
+        setData(data);
+        console.log("async await operation successfully done👍");
 
+      }
+      catch (error) {
+        console.log("something is happening", error);
+
+      }
     }
-    asyncfun();
-  }, []);
-
+    asyncoperation();
+  }, [])
   return (
     <div className='container'>
       <h1>For loop</h1>
@@ -114,20 +116,23 @@ const Jspractice = () => {
       <button className='btn btn-primary m-4' onClick={objfun}>click for Object</button>
       <hr />
 
-      <div className='w-vw h-lvh bg-cyan-700 container-fluid'>
+      <div className='w-vw h-2vh bg-cyan-700 container-fluid'>
         <h1 className='text-center pt-3'>Event Listener</h1>
         <button className='btn btn-success' id='event' onClick={eventfun}>Click me I am event listener</button>
 
         <h1 className='text-white mt-3'>Fetched Data:</h1>
-        {
-          data.map((res) => (
-            <div className='flex 'key={res.id}>
-                <h2 className='text-white' >{res.name}</h2>
-                <h2 className='text-black'>{res.email}</h2>
-            </div>
-        
-          ))
-        }
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {data.map((res) => (
+              <div className="bg-white rounded shadow p-4" key={res.id}>
+                <h5 className="text-xl font-semibold mb-2">{res.name}</h5>
+                <h6 className="text-yellow-500 mb-2">{res.email}</h6>
+                <p className="text-gray-600 mb-4">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Go somewhere</a>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
