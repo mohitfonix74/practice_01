@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes bounce {
+    0%{
+        transform: translateY(0px);
+       scale: 1;
+        color: white;
+    }
+    30%{
+        transform: translateY(60px)  scale(1.1);
+        margin: 0 0 -51px 30px;
+        background-color: purple;
+
+    }
+    75%{
+        transform: translateY(60px)  scale(1.1);
+        margin: 150px 30px 150px 0px;
+        background-color: rgb(16, 215, 158);
+    }
+    100%{
+        transform: translateY(0px);
+        scale: 1;
+        margin: 30px 40px 40px 10px;
+        color: red;
+
+
+    }
+}
+
+@media ( max-width: 600px){
+
+    .animated-text{
+        font-size: 16px;
+        color: blue;
+        padding: 20px;
+     
+    }
+    .ball{
+        width: 36%;
+        height: 200px;
+        background-color: red;
+        border-radius: 50%;
+        border: 2px solid black;
+        margin: 10px 0 0 180px;
+        animation: bounce 3s alternate infinite;
+
+    }
+
+}
+    

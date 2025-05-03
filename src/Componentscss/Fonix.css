@@ -1,0 +1,46 @@
+.containermain{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        grid-template-rows: 2fr 2fr;
+        row-gap: 10px;
+}
+
+
+#fbox1{
+    width: 450px ;
+    height: 100px;
+    border-radius: 5px;
+    
+
+}
+#fbox2{
+    width: 450px ;
+    height: 100px;
+    border-radius: 5px;
+
+
+}
+#fbox3{
+    width: 450px ;
+    height: 100px;
+    border-radius: 5px;
+
+
+}
+#fbox4{
+    width: 450px ;
+    height: 100px;
+    border-radius: 5px;
+
+
+}
+
+.clock{
+    margin-top: -40px;
+}
+.h42{
+ margin-top: -40px;
+}
+.projectwidth{
+    width: 300px;
+}

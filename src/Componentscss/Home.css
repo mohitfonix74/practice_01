@@ -1,0 +1,37 @@
+.carousel-item img{
+    width: 80%;
+    border-radius: 20px;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/2;
+    margin: 20px 0 0 10%;
+}
+.next{
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px ;
+    border-radius: 10px;
+    margin: 0 0 0 30%;
+}
+
+.back{
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px ;
+    border-radius: 10px;
+    margin: 0 0 0 -30%;
+}
+.btn1{
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px ;
+    border-radius: 10px;
+    margin: 10px 0 0 44%;
+}
+.btn2{
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px ;
+    border-radius: 10px;
+    margin: 10px 0 0 38%;
+}
