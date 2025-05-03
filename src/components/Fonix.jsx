@@ -77,6 +77,7 @@ const Fonix = ({ label, value1 }) => {
         return () => clearInterval(timer);
     }, []);
 
+
     // Handle clock in/out
     const handleClockAction = () => {
         if (clockStatus === 'Clock In') {
@@ -113,6 +114,22 @@ const Fonix = ({ label, value1 }) => {
         { name: 'Reports', icon: <FiBarChart2 /> },
         { name: 'Files', icon: <FiFolder /> }
     ];
+
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then((response) => response.json())
+            .then((dataa) => {
+                setData(dataa);
+            })
+            .catch((err) => {
+                console.log("Fetch error:", err);
+            });
+    }, []);
+
+
 
     return (
         <div className="flex h-screen bg-[#1C1F26] font-sans">
@@ -236,47 +253,59 @@ const Fonix = ({ label, value1 }) => {
                     </div>
 
                 </div>
-                
-                        {/* All Tasks Overview */}
-                        <div className="bg-[#1C1F26]-700 rounded-lg  shadow-sm border border-gray-200 taskwidth">
-                            <div className="p-4 border-b border-gray-200">
-                                <h3 className="font-semibold text-gray-800">All Tasks Overview</h3>
-                            </div>
-                            <div className="p-6 grid grid-cols-3 gap-4 text-center">
-                                <div>
-                                    <h4 className="text-2xl font-bold text-gray-800">{tasks.todo}</h4>
-                                    <p className="text-sm text-gray-500">To do</p>
-                                </div>
-                                <div>
-                                    <h4 className="text-2xl font-bold text-gray-800">{tasks.inProgress}</h4>
-                                    <p className="text-sm text-gray-500">In progress</p>
-                                </div>
-                                <div>
-                                    <h4 className="text-2xl font-bold text-gray-800">{tasks.done}</h4>
-                                    <p className="text-sm text-gray-500">Done</p>
-                                </div>
-                            </div>
+
+                {/* All Tasks Overview */}
+                <div className="bg-[#1C1F26]-700 rounded-lg  shadow-sm border border-gray-200 taskwidth">
+                    <div className="p-4 border-b border-gray-200">
+                        <h3 className="font-semibold text-gray-800">All Tasks Overview</h3>
+                    </div>
+                    <div className="p-6 grid grid-cols-3 gap-4 text-center">
+                        <div>
+                            <h4 className="text-2xl font-bold text-gray-800">{tasks.todo}</h4>
+                            <p className="text-sm text-gray-500">To do</p>
                         </div>
-                             {/* My Timesheet */}
-                             <div className="bg-[#1C1F26]-700 rounded-lg shadow-sm border border-gray-200 timesheetwidth">
-                            <div className="p-4 border-b border-gray-200">
-                                <h3 className="font-semibold text-gray-800">My timesheet</h3>
-                            </div>
-                            <div className="p-6">
-                                <div className="h-40 flex items-end space-x-4">
-                                    {timesheetData.map((value, index) => (
-                                        <div key={index} className="flex-1 flex flex-col items-center">
-                                            <div
-                                                className="w-full bg-blue-400 rounded-t-md transition-all duration-300"
-                                                style={{ height: `${value * 20}%` }}
-                                            ></div>
-                                            <span className="mt-2 text-sm text-gray-600">{value}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+                        <div>
+                            <h4 className="text-2xl font-bold text-gray-800">{tasks.inProgress}</h4>
+                            <p className="text-sm text-gray-500">In progress</p>
                         </div>
-                        
+                        <div>
+                            <h4 className="text-2xl font-bold text-gray-800">{tasks.done}</h4>
+                            <p className="text-sm text-gray-500">Done</p>
+                        </div>
+                    </div>
+                </div>
+                {/* My Timesheet */}
+                <div className="bg-[#1C1F26]-700 rounded-lg mb-4 shadow-sm border border-gray-200 timesheetwidth">
+                    <div className="p-4 border-b border-gray-200">
+                        <h3 className="font-semibold text-gray-800">My timesheet</h3>
+                    </div>
+                    <div className="p-6">
+                        <div className="h-40 flex items-end space-x-4">
+                            {timesheetData.map((value, index) => (
+                                <div key={index} className="flex-1 flex flex-col items-center">
+                                    <div
+                                        className="w-full bg-blue-400 rounded-t-md transition-all duration-300"
+                                        style={{ height: `${value * 20}%` }}
+                                    ></div>
+                                    <span className="mt-2 text-sm text-gray-600">{value}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div className="container mx-auto px-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                        {data.map((res) => (
+                            <div className="bg-gray-800 rounded shadow p-4" key={res.id}>
+                                <h5 className="text-xl font-semibold mb-2">{res.name}</h5>
+                                <h6 className="text-yellow-500 mb-2">{res.email}</h6>
+                                <p className="text-gray-600 mb-4">With supporting text below as a natural lead-in to additional content.</p>
+                                <a href="#" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Go somewhere</a>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
             </div>
 
         </div>
