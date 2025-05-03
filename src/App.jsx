@@ -11,6 +11,7 @@ import Mouse from './components/Mouse'
 import Responsive from './components/Responsive'
 import Grid from './components/Grid'
 import Fonix from './components/Fonix'
+import Jspractice from './components/Jspractice'
 const App = () => {
   return (
     <Router>  
@@ -25,6 +26,7 @@ const App = () => {
       <Route path='/todo' element ={<Todo/>}/>
       <Route path='/mouse' element ={<Mouse/>}/>
       <Route path='/grid' element ={<Grid/>}/>
+      <Route path='/js' element ={<Jspractice/>}/>
       <Route path='/responsive' element ={<Responsive/>}/>
       <Route path='/fonix' element = {<Fonix label="Progress" value1={70}/>} />
 

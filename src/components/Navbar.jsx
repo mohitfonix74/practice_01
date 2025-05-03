@@ -29,6 +29,8 @@ const Navbar = () => {
                   <a href="/responsive" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Responsive</a>
                   <a href="/todo" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Todo</a>
                   <a href="/grid" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Grid</a>
+                  <a href="/js" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Javascript</a>
+
                 </div>
               </div>
             </div>
