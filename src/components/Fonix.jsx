@@ -11,7 +11,7 @@ import {
     Menu, CheckCheck, LayoutGrid, Monitor, Power, Search,
     Plus, Globe, Clock, Bell, Mail
 } from 'lucide-react';
-const Fonix = ({label,value1}) => {
+const Fonix = ({ label, value1 }) => {
     // State for active tab
     const [activeTab, setActiveTab] = useState('Dashboard');
 
@@ -145,7 +145,7 @@ const Fonix = ({label,value1}) => {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col overflow-hidden">
+            <div className="flex-1 flex flex-col">
                 <nav className="w-full flex items-center justify-between px-6 py-2 h-21 bg-[#1C1F26] text-white">
                     {/* Left section */}
                     <div className="flex items-center gap-4">
@@ -230,13 +230,57 @@ const Fonix = ({label,value1}) => {
                             <h4 className="text-2xl font-bold text-gray-800">{projects.hold}</h4>
                             <p className="text-sm text-gray-500">Hold</p>
                         </div>
-                        
+
+
 
                     </div>
-                </div>
 
+                </div>
+                
+                        {/* All Tasks Overview */}
+                        <div className="bg-[#1C1F26]-700 rounded-lg  shadow-sm border border-gray-200 taskwidth">
+                            <div className="p-4 border-b border-gray-200">
+                                <h3 className="font-semibold text-gray-800">All Tasks Overview</h3>
+                            </div>
+                            <div className="p-6 grid grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <h4 className="text-2xl font-bold text-gray-800">{tasks.todo}</h4>
+                                    <p className="text-sm text-gray-500">To do</p>
+                                </div>
+                                <div>
+                                    <h4 className="text-2xl font-bold text-gray-800">{tasks.inProgress}</h4>
+                                    <p className="text-sm text-gray-500">In progress</p>
+                                </div>
+                                <div>
+                                    <h4 className="text-2xl font-bold text-gray-800">{tasks.done}</h4>
+                                    <p className="text-sm text-gray-500">Done</p>
+                                </div>
+                            </div>
+                        </div>
+                             {/* My Timesheet */}
+                             <div className="bg-[#1C1F26]-700 rounded-lg shadow-sm border border-gray-200 timesheetwidth">
+                            <div className="p-4 border-b border-gray-200">
+                                <h3 className="font-semibold text-gray-800">My timesheet</h3>
+                            </div>
+                            <div className="p-6">
+                                <div className="h-40 flex items-end space-x-4">
+                                    {timesheetData.map((value, index) => (
+                                        <div key={index} className="flex-1 flex flex-col items-center">
+                                            <div
+                                                className="w-full bg-blue-400 rounded-t-md transition-all duration-300"
+                                                style={{ height: `${value * 20}%` }}
+                                            ></div>
+                                            <span className="mt-2 text-sm text-gray-600">{value}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        
             </div>
+
         </div>
+
     );
 };
 

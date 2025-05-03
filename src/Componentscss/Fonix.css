@@ -44,3 +44,11 @@
 .projectwidth{
     width: 300px;
 }
+.taskwidth{
+    width: 300px;
+    margin: -165px 0 0 350px;
+}
+.timesheetwidth{
+    width: 300px;
+    margin: -165px 0 0 690px;
+}
