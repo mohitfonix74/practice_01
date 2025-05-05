@@ -30,13 +30,13 @@ const Employee_list = () => {
       {
         list.map((items) => {
 
-return(
-          <div key={items.id}>
-            <h1>{`Hiii I am ${items.name} and from ${items.city} and i am ${items.role}`}</h1>
-          
-          </div>
+          return (
+            <div key={items.id}>
+              <h1>{`Hiii I am ${items.name} and from ${items.city} and i am ${items.role}`}</h1>
 
-)
+            </div>
+
+          )
 
 
 

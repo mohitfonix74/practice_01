@@ -12,6 +12,7 @@ import Responsive from './components/Responsive'
 import Grid from './components/Grid'
 import Fonix from './components/Fonix'
 import Jspractice from './components/Jspractice'
+import Reactprctice from './components/Reactprctice'
 const App = () => {
   return (
     <Router>  
@@ -29,6 +30,8 @@ const App = () => {
       <Route path='/js' element ={<Jspractice/>}/>
       <Route path='/responsive' element ={<Responsive/>}/>
       <Route path='/fonix' element = {<Fonix label="Progress" value1={70}/>} />
+      <Route path='/reactpractice' element ={<Reactprctice/>}/>
+
 
 
 
