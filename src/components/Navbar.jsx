@@ -32,6 +32,7 @@ const Navbar = () => {
                   <Link to="/grid" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Grid</Link>
                   <Link to="/js" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Javascript</Link>
                   <Link to="/reactpractice" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">React</Link>
+                  <Link to="/apiform" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Api-Form</Link>
 
                 </div>
               </div>
