@@ -9,7 +9,8 @@ import {
 import '../Componentscss/Fonix.css'
 import {
     Menu, CheckCheck, LayoutGrid, Monitor, Power, Search,
-    Plus, Globe, Clock, Bell, Mail
+    Plus, Globe, Clock, Bell, Mail,
+    Link
 } from 'lucide-react';
 const Fonix = ({ label, value1 }) => {
     // State for active tab
@@ -300,7 +301,7 @@ const Fonix = ({ label, value1 }) => {
                                 <h5 className="text-xl font-semibold mb-2">{res.name}</h5>
                                 <h6 className="text-yellow-500 mb-2">{res.email}</h6>
                                 <p className="text-gray-600 mb-4">With supporting text below as a natural lead-in to additional content.</p>
-                                <a href="#" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Go somewhere</a>
+                                <Link href="#" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Go somewhere</Link>
                             </div>
                         ))}
                     </div>

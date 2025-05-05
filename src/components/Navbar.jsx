@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 const Navbar = () => {
@@ -6,12 +7,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="text-white font-bold text-xl">Navbar</a>
+            <Link to="#" className="text-white font-bold text-xl">Navbar</Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</a>
-              <a href="/props" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Props-page</a>
+              <Link to="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+              <Link to="/props" className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Props-page</Link>
 
               {/* Dropdown using Tailwind */}
               <div className="relative group">
@@ -22,15 +23,15 @@ const Navbar = () => {
                   </svg>
                 </button>
                 <div className="absolute hidden group-hover:block bg-gray-800 min-w-max py-2 rounded-md shadow-lg z-10">
-                  <a href="/employee_list" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Employees</a>
-                  <a href="/form" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Form</a>
-                  <a href="/fonix" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Fonix</a>
-                  <a href="/counter" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Counter</a>
-                  <a href="/responsive" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Responsive</a>
-                  <a href="/todo" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Todo</a>
-                  <a href="/grid" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Grid</a>
-                  <a href="/js" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Javascript</a>
-                  <a href="/reactpractice" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">React</a>
+                  <Link to="/employee_list" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Employees</Link>
+                  <Link to="/form" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Form</Link>
+                  <Link to="/fonix" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Fonix</Link>
+                  <Link to="/counter" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Counter</Link>
+                  <Link to="/responsive" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Responsive</Link>
+                  <Link to="/todo" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Todo</Link>
+                  <Link to="/grid" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Grid</Link>
+                  <Link to="/js" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">Javascript</Link>
+                  <Link to="/reactpractice" className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700">React</Link>
 
                 </div>
               </div>
