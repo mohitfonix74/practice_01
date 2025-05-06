@@ -20,6 +20,7 @@ import Apiform from './components/Apiform'
 import Reactres from './components/Reactres'
 import Carddaisy from './components/Carddaisy'
 import Cardskeleton from './components/Cardskelton'
+import Profile from './components/Profile'
 
 
 const App = () => {
@@ -46,6 +47,8 @@ const App = () => {
         <Route path='/reactres' element={<Reactres/>} />
         <Route path='/carddaisy' element={<Carddaisy/>} />
         <Route path='/cardskelton' element={<Cardskeleton/>} />
+        <Route path='/profile' element={<Profile/>} />
+
         
 
       </Routes>
