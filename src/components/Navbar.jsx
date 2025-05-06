@@ -38,6 +38,7 @@ const Navbar = () => {
                   ["Javascript", "/js"],
                   ["React", "/reactpractice"],
                   ["Api-Form", "/apiform"],
+                  ["Profile", "/profile"],
                   ["React-Responsive", "/reactres"]
                 ].map(([text, path]) => (
                   <Link
@@ -114,6 +115,7 @@ const Navbar = () => {
             ["Javascript", "/js"],
             ["React", "/reactpractice"],
             ["Api-Form", "/apiform"],
+            ["Profile", "/profile"],
             ["React-Responsive", "/reactres"]
           ].map(([text, path]) => (
             <Link
