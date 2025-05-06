@@ -53,8 +53,11 @@ const Home = () => {
                     <button className='btn2' onClick={() => setTitle("hello i am new title")}>click me for changing the title</button>
             
                     <button className='btn2' onClick={() => setTitle(originaltitle)}>click me for getting the old title</button>
+
                     
                 </div>
+             
+
             </div>
         </div>
 

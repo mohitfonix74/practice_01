@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import 'react-toastify/dist/ReactToastify.css';
 
+
 html, body {
     background-color: #1C1F26 !important;
     --bs-body-color: #898fa9;

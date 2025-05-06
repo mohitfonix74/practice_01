@@ -17,6 +17,11 @@ import Buttoncomp from './components/Buttoncomp'
 import Inputcomp from './components/Inputcomp'
 import { ToastContainer } from 'react-toastify'
 import Apiform from './components/Apiform'
+import Reactres from './components/Reactres'
+import Carddaisy from './components/Carddaisy'
+import Cardskeleton from './components/Cardskelton'
+
+
 const App = () => {
   return (
     <Router>
@@ -38,17 +43,17 @@ const App = () => {
         <Route path='/input' element={<Inputcomp />} />
         <Route path='/button' element={<Buttoncomp />} />
         <Route path='/apiform' element={<Apiform />} />
-
-
-
-
-
+        <Route path='/reactres' element={<Reactres/>} />
+        <Route path='/carddaisy' element={<Carddaisy/>} />
+        <Route path='/cardskelton' element={<Cardskeleton/>} />
+        
 
       </Routes>
       <ToastContainer position="top-right" autoClose={3000} />
 
 
     </Router>
+    
   )
 }
 
