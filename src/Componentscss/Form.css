@@ -1,13 +1,4 @@
-input{
-    padding: 10px 20px;
-    border: 2px solid violet;
-    border-radius: 10px;
-}
-.formcontainer{
-    margin: 20px 0 0 40%;
-    border: 2px solid black;
-    width: auto;
-    border-radius: 10px;
-    background-color: aquamarine;
-    filter: blur(0.5px);
+input::placeholder {
+    font-size: 0.95rem;
+    color: #a0aec0;
 }

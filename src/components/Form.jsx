@@ -1,42 +1,27 @@
 import React, { useState } from 'react';
 import '../Componentscss/Form.css';
 import Buttoncomp from './Buttoncomp';
-import Inputcomp from './Inputcomp';
 import { toast } from 'react-toastify';
+import { motion } from 'framer-motion';
 
 const Form = () => {
     const [name, setName] = useState('');
     const [city, setCity] = useState('');
     const [dob, setDob] = useState('');
-
-    // Error message states
-    const [errors, setErrors] = useState({
-        name: '',
-        city: '',
-        dob: ''
-    });
+    const [errors, setErrors] = useState({ name: '', city: '', dob: '' });
 
     const validateForm = () => {
         let valid = true;
-        const newErrors = {
-            name: '',
-            city: '',
-            dob: ''
-        };
+        const newErrors = { name: '', city: '', dob: '' };
 
-        // Name validation
         if (!name) {
             newErrors.name = 'Name is required';
             valid = false;
         }
-
-        // City validation
         if (!city) {
             newErrors.city = 'City is required';
             valid = false;
         }
-
-        // Date of birth validation (checking if the date is not in the future)
         if (!dob) {
             newErrors.dob = 'Date of birth is required';
             valid = false;
@@ -66,48 +51,59 @@ const Form = () => {
     };
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-10 formcontainer py-3">
-                    <form onSubmit={formdataa}>
-                        {/* Name Input */}
-                        <Inputcomp
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center px-4">
+            <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: 'easeOut' }}
+                className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-5 sm:p-10"
+            >
+                <h2 className="text-3xl font-bold text-center text-black mb-8">Student Registration</h2>
+                <form onSubmit={formdataa} className="space-y-6">
+                    
+                    {/* Name */}
+                    <div className="relative">
+                        <input
+                            type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            placeholder="Enter Your Name"
+                            placeholder="Enter your name"
+                            className="w-full border-b-2 border-gray-300 bg-transparent focus:outline-none focus:border-blue-500 py-2 text-gray-700 placeholder-gray-400"
                         />
-                        {errors.name && <span className="text-red-500">{errors.name}</span>}
-                        <br />
+                        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+                    </div>
 
-                        {/* City Input */}
-                        <Inputcomp
+                    {/* City */}
+                    <div className="relative">
+                        <input
+                            type="text"
                             value={city}
                             onChange={(e) => setCity(e.target.value)}
-                            placeholder="Enter Your City"
+                            placeholder="Enter your city"
+                            className="w-full border-b-2 border-gray-300 bg-transparent focus:outline-none focus:border-blue-500 py-2 text-gray-700 placeholder-gray-400"
                         />
-                        {errors.city && <span className="text-red-500">{errors.city}</span>}
-                        <br />
+                        {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
+                    </div>
 
-                        {/* Date of Birth Input */}
-
+                    {/* DOB */}
+                    <div className="relative">
                         <input
                             type="date"
-                            className="mb-2"
                             value={dob}
                             onChange={(e) => setDob(e.target.value)}
-                            placeholder='Enter Your Dob'
-                            required
+                            className="w-full border-b-2 border-gray-300 bg-transparent focus:outline-none focus:border-blue-500 py-2 text-gray-700"
                         />
-                        {errors.dob && <span className="text-red-500">{errors.dob}</span>}
-                        <br />
+                        {errors.dob && <p className="text-red-500 text-sm mt-1">{errors.dob}</p>}
+                    </div>
 
-                        {/* Submit Button */}
-                        <Buttoncomp type="submit" variant="danger" className="mt-1">
+                    {/* Button */}
+                    <div className="pt-4">
+                        <Buttoncomp type="submit" variant="primary" className="w-full">
                             Submit
                         </Buttoncomp>
-                    </form>
-                </div>
-            </div>
+                    </div>
+                </form>
+            </motion.div>
         </div>
     );
 };

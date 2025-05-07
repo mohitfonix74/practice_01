@@ -18,13 +18,13 @@ const Apiform = () => {
         setError(null);
         try {
             const response = await axios.get('https://68188b385a4b07b9d1cfa5c6.mockapi.io/api/v1/user');
-    
+
             // Ensure loader stays for at least 2 seconds
             setTimeout(() => {
                 setUsers(response.data);
                 setLoading(false);
             }, 2000);
-    
+
         } catch (err) {
             setTimeout(() => {
                 setError('Failed to fetch users. Please try again.');
@@ -32,7 +32,7 @@ const Apiform = () => {
             }, 1500);
         }
     };
-    
+
     // Load users on component mount
     useEffect(() => {
         fetchUsers();
@@ -61,25 +61,30 @@ const Apiform = () => {
             {/* Form Card */}
             <div className="max-w-xl mx-auto bg-white shadow rounded-md p-5 mt-5 mb-10">
                 <form onSubmit={handleSubmit}>
-                    <h2 className="text-xl font-semibold mb-4 text-center">Add New User</h2>
-                    <Inputcomp
+                    <h2 className="text-xl font-semibold mb-4 text-center text-black transition-colors duration-300">
+                        Add New User
+                    </h2>
+
+                    <input
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         placeholder="Enter your name"
-                        className="mb-3"
+                        className="mb-3 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 ease-in-out"
                     />
-                    <Inputcomp
+
+                    <input
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         placeholder="Enter your city"
-                        className="mb-3"
+                        className="mb-3 p-2 ms-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 ease-in-out"
                     />
+
                     <input
                         type="date"
                         value={dob}
                         onChange={(e) => setDob(e.target.value)}
                         required
-                        className="mb-4 w-full p-2 border border-gray-300 rounded"
+                        className="mb-4 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 ease-in-out"
                     />
                     <Buttoncomp
                         type="submit"
@@ -92,7 +97,7 @@ const Apiform = () => {
             </div>
 
             {/* User List Section */}
-            <div className="max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto mt-3">
                 {/* Loading Spinner */}
                 {loading && (
                     <div className="flex justify-center items-center py-10">
