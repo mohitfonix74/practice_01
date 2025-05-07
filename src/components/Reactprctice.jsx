@@ -25,7 +25,7 @@ const UserCards = () => {
             {loading ? (
                 <p className="text-center text-gray-500 text-xl">Loading users...</p>
             ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 m-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 m-5 pb-4">
                     {users.map((user) => (
                         <div key={user.id} className="bg-white p-5 m-10 rounded-2xl shadow-md hover:shadow-lg transition-all">
                             <div className="flex m-10 items-center space-x-4 mb-4">

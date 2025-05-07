@@ -12,12 +12,12 @@ const Profile = () => {
           <h5 className="font-semibold text-lg">Mohit Kumawat</h5>
         </div>
 
-        <div className="right space-y-2">
+        <div className="right space-y-2 md:space-y-3">
           <p className="bg-sky-500 text-white w-max px-3 py-1 text-sm rounded">Frontend Intern</p>
 
           <div className="flex items-center gap-2">
             <FiMail />
-            <p>mohit.kumawat@fonixtech.io</p>
+            <p className="text-sm sm:text-base">mohit.kumawat@fonixtech.io</p>
           </div>
 
           <div className="rightgit flex gap-4 items-center mt-2">
@@ -34,8 +34,8 @@ const Profile = () => {
 
       {/* Navigation Tabs */}
       <hr className="my-4 border-gray-600" />
-      <div className="ulitems flex flex-row whitespace-nowrap p-2">
-        <ul className="inline-flex gap-4">
+      <div className="ulitems flex flex-wrap justify-start gap-4 p-2">
+        <ul className="inline-flex flex-wrap gap-4">
           {[
             'Timeline',
             'General Info',
@@ -73,11 +73,11 @@ const Profile = () => {
           { name: 'Pinterest', placeholder: 'https://www.pinterest.com/' },
         ].map((item, index) => (
           <div key={index} className="flex justify-between items-center py-2 border-b border-gray-700">
-            <label className="font-medium">{item.name}</label>
+            <label className="font-medium text-sm sm:text-base">{item.name}</label>
             <input
               type="text"
               placeholder={item.placeholder}
-              className="bg-gray-900 text-white border border-gray-600 rounded px-3 py-2 w-2/3 outline-none"
+              className="bg-gray-900 text-white border border-gray-600 rounded px-3 py-2 w-full sm:w-2/3 outline-none"
             />
           </div>
         ))}
@@ -94,14 +94,14 @@ const Profile = () => {
           { label: 'SSN', value: 'SSN' },
         ].map((item, index) => (
           <div key={index} className="flex justify-between items-center py-2 border-b border-gray-700">
-            <span className="font-medium">{item.label}</span>
-            <span className="text-gray-400">{item.value}</span>
+            <span className="font-medium text-sm sm:text-base">{item.label}</span>
+            <span className="text-gray-400 text-sm sm:text-base">{item.value}</span>
           </div>
         ))}
 
         {/* Gender Selection */}
         <div className="flex items-center justify-between py-3 border-b border-gray-700">
-          <span className="font-medium">Gender</span>
+          <span className="font-medium text-sm sm:text-base">Gender</span>
           <div className="flex gap-4">
             {['Male', 'Female', 'Other'].map((gender, index) => (
               <label key={index} className="flex items-center gap-2">
@@ -120,7 +120,7 @@ const Profile = () => {
 
         {/* Save Button */}
         <div className="mt-4 flex justify-end">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded text-sm sm:text-base">
             Save
           </button>
         </div>
