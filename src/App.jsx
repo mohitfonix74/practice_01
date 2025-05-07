@@ -23,7 +23,7 @@ import Cardskeleton from './components/Cardskelton';
 import Profile from './components/Profile';
 import Register from './components/Register';
 import Login from './components/Login';
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/Authcontextt";
 
 const App = () => {
   return (

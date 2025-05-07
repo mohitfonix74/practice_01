@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCar, FaBan } from "react-icons/fa";
 import { ImSpinner2 } from "react-icons/im";
-import Navbar from "./Navbar"; // Ensure Navbar is imported
 
 const Props = (props) => {
   const [isVerify, setIsVerify] = useState(null);

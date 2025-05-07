@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/Authcontextt";
 import { Eye, EyeOff } from "lucide-react"; // Icon for eye toggle
 
 const Register = () => {
