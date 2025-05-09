@@ -53,7 +53,7 @@ const Todo = () => {
         setItem(updatedList);
         setTimeout(() => {
             toast.success(`"${deletedName}" deleted successfully`);
-        }, 300);
+        }, 3000);
     };
 
     return (
