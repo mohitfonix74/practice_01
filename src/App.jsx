@@ -24,6 +24,7 @@ import Profile from './components/Profile';
 import Register from './components/Register';
 import Login from './components/Login';
 import { AuthProvider } from "./context/Authcontextt";
+import Hooks from './components/Hooks';
 
 const App = () => {
   return (
@@ -45,6 +46,7 @@ const App = () => {
           <Route path='/reactpractice' element={<Reactprctice />} />
           <Route path='/input' element={<Inputcomp />} />
           <Route path='/button' element={<Buttoncomp />} />
+          <Route path='/hooks' element={<Hooks />} />
           <Route path='/apiform' element={<Apiform />} />
           <Route path='/reactres' element={<Reactres />} />
           <Route path='/carddaisy' element={<Carddaisy />} />

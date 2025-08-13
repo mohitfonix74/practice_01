@@ -48,6 +48,7 @@ const Navbar = () => {
                   </button>
                   <div className="absolute hidden group-hover:block bg-gray-800 min-w-max py-2 rounded-md shadow-lg z-20">
                     {[  
+                      ["Hooks", "/hooks"],
                       ["Form", "/form"],
                       ["Fonix", "/fonix"],
                       ["Counter", "/counter"],
@@ -107,7 +108,8 @@ const Navbar = () => {
           {isLoggedIn ? (
             <>
               <Link to="/props" className="block text-gray-300 px-3 py-2 rounded-md text-base font-medium">Props-page</Link>
-              {[     
+              {[
+                ["Hooks", "/hooks"],
                 ["Form", "/form"],
                 ["Fonix", "/fonix"],
                 ["Counter", "/counter"],

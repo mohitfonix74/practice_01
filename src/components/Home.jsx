@@ -1,10 +1,7 @@
-import { useNavigate } from 'react-router-dom'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const images = [
-  "/Car.jpg",
-  "/Car2.jpg",
-  "/Car3.jpg",
   "/Car.jpg",
   "/Car2.jpg",
   "/Car3.jpg",
@@ -12,16 +9,7 @@ const images = [
 
 const Home = () => {
   const navigate = useNavigate();
-  const originalTitle = "I am original title";
-  const [title, setTitle] = useState(originalTitle);
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const alertFunction = () => {
-    alert("Welcome to Props Page 😊");
-    setTimeout(() => {
-      navigate('/props');
-    }, 1000);
-  };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -32,12 +20,27 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black  py-8 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-center text-white pt-3 pb-3">Car Slider</h1>
+    <div className="min-h-screen bg-gray-950 text-white font-sans">
+      {/* Hero Section */}
+      <section className="relative h-[85vh] bg-cover bg-center" style={{ backgroundImage: `url(${images[0]})` }}>
+        <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Welcome to DriveX</h1>
+          <p className="text-lg md:text-xl max-w-2xl mb-6">
+            Premium car rentals and luxury vehicle experiences. Discover your next journey with us.
+          </p>
+          <button
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition"
+            onClick={() => navigate('/explore')}
+          >
+            Explore Now
+          </button>
+        </div>
+      </section>
 
-        {/* Image Slider */}
-        <div className="relative w-full overflow-hidden rounded-lg shadow-lg mb-6 h-99">
+      {/* Image Slider */}
+      <section className="max-w-5xl mx-auto mt-10 px-4">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Our Premium Collection</h2>
+        <div className="relative w-full overflow-hidden rounded-lg shadow-lg h-96">
           <div
             className="flex transition-transform duration-700 ease-in-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -47,54 +50,56 @@ const Home = () => {
                 key={idx}
                 src={img}
                 alt={`Car ${idx + 1}`}
-                className="w-full h-99 object-cover not-first: flex-shrink-0 bg-center"
+                className="w-full flex-shrink-0 h-96 object-cover"
               />
             ))}
           </div>
 
+          {/* Slider Controls */}
           <div className="absolute inset-0 flex items-center justify-between px-4">
             <button
               onClick={prevSlide}
-              className="bg-black bg-opacity-50 text-white px-3 py-1 rounded hover:bg-opacity-70"
+              className="bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-70"
             >
-              Back
+              ‹
             </button>
             <button
               onClick={nextSlide}
-              className="bg-black bg-opacity-50 text-white px-3 py-1 rounded hover:bg-opacity-70"
+              className="bg-black bg-opacity-50 text-white px-4 py-2 rounded hover:bg-opacity-70"
             >
-              Next
+              ›
             </button>
           </div>
         </div>
+      </section>
 
-        {/* Alert Button */}
-        <div className="flex justify-center mb-4">
-          <button
-            className="bg-blue-600 text-white p-2 mt-4 rounded hover:bg-blue-700 transition"
-            onClick={alertFunction}
-          >
-            Click me
-          </button>
+      {/* Features Section */}
+      <section className="max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-3 gap-8">
+        <div className="bg-gray-900 rounded-xl p-6 text-center shadow hover:shadow-xl transition">
+          <h3 className="text-xl font-bold mb-2">Luxury Cars</h3>
+          <p className="text-gray-400">Experience top-class luxury and comfort with our premium cars collection.</p>
         </div>
+        <div className="bg-gray-900 rounded-xl p-6 text-center shadow hover:shadow-xl transition">
+          <h3 className="text-xl font-bold mb-2">Affordable Prices</h3>
+          <p className="text-gray-400">Get the best deals in the market without compromising on quality or service.</p>
+        </div>
+        <div className="bg-gray-900 rounded-xl p-6 text-center shadow hover:shadow-xl transition">
+          <h3 className="text-xl font-bold mb-2">24/7 Support</h3>
+          <p className="text-gray-400">We’re here to assist you anytime, anywhere. Your journey is our priority.</p>
+        </div>
+      </section>
 
-        {/* Title Section */}
-        <h2 className="text-2xl text-center font-semibold mb-4">{title}</h2>
-        <div className="flex justify-center gap-4 flex-wrap pb-4">
-          <button
-            className="bg-green-600 text-white px-5 py-2 rounded hover:bg-green-700 transition"
-            onClick={() => setTitle("Hello I am new title")}
-          >
-            Change Title
-          </button>
-          <button
-            className="bg-gray-600 text-white px-5 py-2 rounded hover:bg-gray-700 transition"
-            onClick={() => setTitle(originalTitle)}
-          >
-            Reset Title
-          </button>
-        </div>
-      </div>
+      {/* CTA Section */}
+      <section className="bg-blue-600 py-12 text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to Ride?</h2>
+        <p className="text-lg mb-6">Book your dream car today and drive with confidence.</p>
+        <button
+          className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition"
+          onClick={() => navigate('/book-now')}
+        >
+          Book Now
+        </button>
+      </section>
     </div>
   );
 };
